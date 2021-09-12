@@ -1,0 +1,82 @@
+.App{
+  font-family: 'Karla', sans-serif;
+}
+
+#home{
+  height: 51rem;
+}
+
+#temi-logo {
+  height: 40px;
+}
+
+#temi-img{
+  border-radius: 50%;
+}
+
+#about-temi-bg{
+  background-image: url('assets/images/about-temi-bg.png');
+  height: 30rem;
+}
+#project{
+  background-image: url('assets/images/project_1.png');
+}
+
+#project:hover {
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#project:hover #open-link{
+  background-image: url('assets/icons/open_in_new.svg');
+  height: 3rem;
+  width: 3rem;
+}
+
+.open-link-mini{
+  height: 0.68rem;
+  width: 0.63rem;
+}
+
+
+#tech-stack-logo{
+  height: 45px;
+}
+
+#mail{
+  height: 16px;
+}
+
+#arrow-down{
+  height: 14px;
+}
+
+#theme-mode-icon {
+  height: 20px;
+}
+
+.footer_icon{
+  height: 20px;
+}
+
+@media screen and (max-width: 812px) {
+  #home{
+    height: auto;
+  }
+  #temi-logo{
+    height: 30px;
+  }
+  
+  #tech-stack-bg{
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 812px) {
+  .header{
+    transition-delay: 150ms;
+    transition-duration: 1000ms;
+    transition-property: all;
+  }
+}

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .white-bg{
+    background-color: white;
+  }
+  .dark-bg{
+    background-color: #1E1C46;
+  }
+  .dark-text{
+    color: darkgray;
+  }
+  .light-text{
+    color: #6B7280;
+  }
+  @variants responsive {
+    .h-101{
+      height: 27rem;
+    }
+    .w-101{
+      width: 27rem;
+    }
+  }
+}
