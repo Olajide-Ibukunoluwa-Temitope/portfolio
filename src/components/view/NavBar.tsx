@@ -113,7 +113,7 @@ const NavBar = ({ theme, toggleThemeMode }: NavbarProps): JSX.Element => {
           </div>
           <div className="hidden md:block">
             <a
-              href="https://drive.google.com/file/d/1u3YDkwFBHnhYTamUp_tfPnD_mEH-R6ep/view?usp=sharing"
+              href="https://drive.google.com/file/d/196hjuEXLncgjWmnYFRJ79N6xtIeWd_sE/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
@@ -193,7 +193,7 @@ const NavBar = ({ theme, toggleThemeMode }: NavbarProps): JSX.Element => {
           </a>
           <div className="pb-6">
             <a
-              href="https://drive.google.com/file/d/1u3YDkwFBHnhYTamUp_tfPnD_mEH-R6ep/view?usp=sharing"
+              href="https://drive.google.com/file/d/196hjuEXLncgjWmnYFRJ79N6xtIeWd_sE/view?usp=sharing
               target="_blank"
               rel="noreferrer"
             >
