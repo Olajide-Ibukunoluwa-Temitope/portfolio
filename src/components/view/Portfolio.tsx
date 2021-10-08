@@ -7,6 +7,7 @@ import ProjectItem from '../custom/ProjectItem';
 import project_1 from '../../assets/images/project_1.png';
 import project_2 from "../../assets/images/project_2.png";
 import project_3 from "../../assets/images/project_3.png";
+import project_4 from "../../assets/images/project_4.png";
 
 
 interface PortfolioProps {
@@ -35,6 +36,13 @@ const Portfolio = ({ theme }: PortfolioProps): JSX.Element => {
       projectTitle: "Crown Store",
       projectDesc:
         "Crown Store is a simple e-commerce built on react and firebase to handle database operations and sign in authentication. It is an online marketplace that serves users with clothing items of their choice some of which include hats, sneakers, jackets and more.",
+    },
+    {
+      projectImg: project_4,
+      projectLink: "https://lightinthemarketplace.com",
+      projectTitle: "Light In The Marketplace",
+      projectDesc:
+        "Light In The Marketplace is a platform established to provide premium grooming services for excellent-minded individuals called to leadership in politics, government, industry and business in Africa.",
     },
   ];
   return (
