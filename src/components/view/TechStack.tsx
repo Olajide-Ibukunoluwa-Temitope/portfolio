@@ -4,54 +4,15 @@ import { Fade } from "react-awesome-reveal";
 
 import TechStackItem from '../custom/TechStackItem';
 
-import javascript from '../../assets/logos/javascript.svg';
-import react from '../../assets/logos/react.png';
-import css_3 from '../../assets/logos/css-3.svg';
-import html_5 from '../../assets/logos/html-5.svg';
-import sass from "../../assets/logos/sass.svg";
-import figma from "../../assets/logos/figma.svg";
-import visual_studio_code from "../../assets/logos/visual-studio-code.svg";
-import github from "../../assets/logos/github.svg";
+
+import {techStackData} from '../../constants/data';
 
 interface TechStackProps {
   theme: Record<string, any>;
 }
 
 const TechStack = ({ theme }: TechStackProps): JSX.Element => {
-  const techStackData = [
-    {
-      img: javascript,
-      title: "javascript",
-    },
-    {
-      img: react,
-      title: "react",
-    },
-    {
-      img: css_3,
-      title: "CSS 3",
-    },
-    {
-      img: html_5,
-      title: "HTML 5",
-    },
-    {
-      img: sass,
-      title: "sass",
-    },
-    {
-      img: figma,
-      title: "figma",
-    },
-    {
-      img: visual_studio_code,
-      title: "VS code",
-    },
-    {
-      img: github,
-      title: "github",
-    },
-  ];
+
   return (
     <div id="techstack" className="py-12">
       <Fade triggerOnce direction="right" delay={200}>

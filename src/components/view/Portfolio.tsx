@@ -4,47 +4,55 @@ import { Fade } from "react-awesome-reveal";
 
 import ProjectItem from '../custom/ProjectItem';
 
-import project_1 from '../../assets/images/project_1.png';
-import project_2 from "../../assets/images/project_2.png";
-import project_3 from "../../assets/images/project_3.png";
-import project_4 from "../../assets/images/project_4.png";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+import {webProjects, mobileProjects} from '../../constants/data';
 
 
 interface PortfolioProps {
   theme: Record<string, any>;
-}
+};
 
 const Portfolio = ({ theme }: PortfolioProps): JSX.Element => {
-  const projects = [
-    {
-      projectImg: project_1,
-      projectLink: "https://hulpafrica.com",
-      projectTitle: "Hulp",
-      projectDesc:
-        "Hulp is a social innovation and technology platform that connects people with opportunities to invest and participate in social development. Hulp helps to simplify investment for home-grown African NGOs using technology and data.",
+  const [activeTab, setActiveTab] = React.useState(0);
+  
+  const handleSwitchTab = (tabId: number) => {
+    setActiveTab(tabId)
+  };
+
+  const handleDisplayTabContent = (): Array<Record<string, string>> => {
+    switch (activeTab) {
+      case 0:
+        return webProjects;
+      case 1:
+        return mobileProjects;
+    
+      default:
+        return webProjects;
+    }
+  }
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 4
     },
-    {
-      projectImg: project_2,
-      projectLink: "https://ploutos-app.herokuapp.com",
-      projectTitle: "MyXchange",
-      projectDesc:
-        "MyXchange is an open peer to peer exchange platform where users can buy and sell currency and decide their own exchange rate. Any registered User can browse through the trades dashboard, buy at a preferred rate or create their own transaction.",
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 2
     },
-    {
-      projectImg: project_3,
-      projectLink: "https://live-crown-store.herokuapp.com",
-      projectTitle: "Crown Store",
-      projectDesc:
-        "Crown Store is a simple e-commerce built on react and firebase to handle database operations and sign in authentication. It is an online marketplace that serves users with clothing items of their choice some of which include hats, sneakers, jackets and more.",
+    tablet: {
+      breakpoint: { max: 1024, min: 813 },
+      items: 2
     },
-    {
-      projectImg: project_4,
-      projectLink: "https://lightinthemarketplace.com",
-      projectTitle: "Light In The Marketplace",
-      projectDesc:
-        "Light In The Marketplace is a platform established to provide premium grooming services for excellent-minded individuals called to leadership in politics, government, industry and business in Africa.",
-    },
-  ];
+    mobile: {
+      breakpoint: { max: 813, min: 0 },
+      items: 1
+    }
+  };
+
   return (
     <div id="portfolio" className="md:py-12 py-0">
       <div className="p-4 my-12 md:my-0 md:p-20 flex justify-center flex-col">
@@ -55,19 +63,41 @@ const Portfolio = ({ theme }: PortfolioProps): JSX.Element => {
               Projects
             </h2>
           </div>
+          <div className='flex w-full mb-12 justify-between'>
+            <div className={`w-5/12 flex justify-center cursor-pointer mx-12 border-pink-400 ${activeTab === 0 && 'border-b-2'} `} onClick={() => handleSwitchTab(0)}>
+              <p className='text-2xl mb-4 h-full'>Web</p>
+            </div>
+            <div className={`w-5/12 flex justify-center cursor-pointer mx-12 border-pink-400 ${activeTab === 1 && 'border-b-2'} `} onClick={() => handleSwitchTab(1)}>
+              <p className='text-2xl mb-4 h-full'>Mobile</p>
+            </div>
+          </div>
           <div>
             <div className="w-full flex flex-wrap justify-center">
-              {projects.map((project) => (
-                <div className="w-full md:w-1/2 mb-12">
-                  <ProjectItem
-                    projectImg={project.projectImg}
-                    projectLink={project.projectLink}
-                    projectTitle={project.projectTitle}
-                    projectDesc={project.projectDesc}
-                    theme={theme}
-                  />
-                </div>
-              ))}
+              <Carousel
+                ssr={false}
+                swipeable={true}
+                showDots={false}
+                infinite={true}
+                responsive={responsive}
+                arrows={true}
+                autoPlay={true}
+                autoPlaySpeed={5000}
+                className='w-full h-auto'
+                keyBoardControl={true}
+              >
+                {handleDisplayTabContent().map((project) => (
+                  <div className="w-full mb-8">
+                    <ProjectItem
+                      projectImg={project.projectImg}
+                      projectLink={project.projectLink}
+                      projectTitle={project.projectTitle}
+                      projectDesc={project.projectDesc}
+                      techStack={project.techStack}
+                      theme={theme}
+                    />
+                  </div>
+                ))}
+              </Carousel>
             </div>
           </div>
         </Fade>

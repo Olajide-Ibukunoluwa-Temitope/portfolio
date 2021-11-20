@@ -34,11 +34,26 @@
   width: 3rem;
 }
 
+#coming-soon{
+  display: none;
+}
+
+#project:hover #coming-soon{
+  display: block;
+}
+
 .open-link-mini{
   height: 0.68rem;
   width: 0.63rem;
 }
 
+.react-multiple-carousel__arrow--left{
+  left: 0 !important;
+}
+
+.react-multiple-carousel__arrow--right{
+  right: 0 !important;
+}
 
 #tech-stack-logo{
   height: 45px;

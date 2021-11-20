@@ -7,6 +7,7 @@ interface ProjectItemProps {
   projectLink: string;
   projectTitle: string;
   projectDesc: string;
+  techStack: string;
   theme: Record<string, any>;
 }
 
@@ -15,6 +16,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   projectLink,
   projectTitle,
   projectDesc,
+  techStack,
   theme,
 }) => {
   return (
@@ -27,10 +29,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
             backgroundImage: `url('${projectImg}')`,
           }}
         >
-          <div
-            className="bg-no-repeat bg-contain bg-center"
-            id="open-link"
-          ></div>
+          {projectLink === '#' ? <p id='coming-soon' className='text-2xl'>In Development</p> : <div className="bg-no-repeat bg-contain bg-center" id="open-link"></div>}
         </div>
       </a>
       <div className="text-2xl font-semibold flex items-center">
@@ -49,7 +48,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
             />
           </span>
         </a>
+        
       </div>
+      <p className='text-pink-400 text-sm'>{techStack}</p>
       <p
         className={` ${
           theme.mode === "light" ? "light-text" : "dark-text"
