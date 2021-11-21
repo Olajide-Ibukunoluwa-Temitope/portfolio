@@ -65,10 +65,10 @@ const Portfolio = ({ theme }: PortfolioProps): JSX.Element => {
           </div>
           <div className='flex w-full mb-12 justify-between'>
             <div className={`w-5/12 flex justify-center cursor-pointer mx-12 border-pink-400 ${activeTab === 0 && 'border-b-2'} `} onClick={() => handleSwitchTab(0)}>
-              <p className='text-2xl mb-4 h-full'>Web</p>
+              <p className='md:text-2xl mb-4 h-full font-semibold'>Web</p>
             </div>
             <div className={`w-5/12 flex justify-center cursor-pointer mx-12 border-pink-400 ${activeTab === 1 && 'border-b-2'} `} onClick={() => handleSwitchTab(1)}>
-              <p className='text-2xl mb-4 h-full'>Mobile</p>
+              <p className='md:text-2xl mb-4 h-full font-semibold'>Mobile</p>
             </div>
           </div>
           <div>
