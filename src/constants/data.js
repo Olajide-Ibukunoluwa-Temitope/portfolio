@@ -16,6 +16,7 @@ import project_2 from "../assets/images/project_2.png";
 import project_3 from "../assets/images/project_3.png";
 import project_4 from "../assets/images/project_4.png";
 import project_5 from "../assets/images/onboarding_screen.png";
+import project_6 from "../assets/images/project_6.png";
 import m_project_1 from '../assets/images/m_project_1.png'
 
 export const webProjects = [
@@ -52,13 +53,21 @@ export const webProjects = [
       techStack: 'Wordpress'
     },
     {
-        projectImg: project_5,
-        projectLink: "https://onboarding-screen-by-temi.netlify.app",
-        projectTitle: "Onboarding Screen",
-        projectDesc:
-          "An Onboarding screen for potential users or businesses to register onto a platform in order to have access to a dashbooard that would contain their account details and include the functionality to withdraw funds from their account.",
-        techStack: 'React JS, CSS'
-      },
+      projectImg: project_5,
+      projectLink: "https://onboarding-screen-by-temi.netlify.app",
+      projectTitle: "Onboarding Screen",
+      projectDesc:
+        "An Onboarding screen for potential users or businesses to register onto a platform in order to have access to a dashbooard that would contain their account details and include the functionality to withdraw funds from their account.",
+      techStack: 'React JS, CSS'
+    },
+    {
+      projectImg: project_6,
+      projectLink: "https://trello-clone-by-temi.netlify.app",
+      projectTitle: "Trello Clone",
+      projectDesc:
+        "A simple clone project of trello the project management software showcasing some of its core functionalities including, adding and deleting lists and cards, and alos being able to move cards between the different lists created",
+      techStack: 'React JS, CSS'
+    },
   ];
   
 export const mobileProjects = [
@@ -67,7 +76,7 @@ export const mobileProjects = [
       projectLink: "#",
       projectTitle: "Cryptfolio",
       projectDesc:
-        "Cryptfolio serves as a portfolio for all crypto currency owned by a user, it contains all the basic information about a user's currency at first glance and even more information on request from the user.",
+        "Cryptfolio serves as a portfolio for all crypto currency owned by a user, it contains all the basic information about a user's crypto currency at first glance and even more information on request from the user.",
       techStack: 'React-Native'
     },
 ];
